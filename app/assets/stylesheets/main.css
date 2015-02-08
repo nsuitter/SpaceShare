@@ -171,14 +171,14 @@ New-Listing-Specific Body
 ********************************************/
 
 .new-listing input[type="text"] {
-	border: 1px solid black;
+	border: 1px solid grey;
 	border-radius: 3px;
 }
 
 textarea {
 	width: 20em;
 	height: 5em;
-	border: 1px solid black;
+	border: 1px solid grey;
 	border-radius: 5px;
 }
 
