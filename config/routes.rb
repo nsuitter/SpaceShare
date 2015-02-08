@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'listings/new'
+
+  get 'listings/edit'
+
+  get 'listings/show'
+
+  get 'listings/index'
+
+  resources :listings
+  root 'static_pages#home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

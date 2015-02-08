@@ -1,0 +1,48 @@
+<div class="container">
+  
+  <div class="listing-match">
+      <div class="match-title">
+        <%= @listing.title %>
+      </div>
+      <div class="match-body">
+        <p>
+          <%= @listing.body %>
+        </p>
+        <div class="image-thumb">
+          <% for picture in @listing.listing_pictures %>
+            <%= image_tag picture.picture.url(:thumb) %>
+          <% end %>
+        </div>
+        <div class="image-large">
+          <% for picture in @listing.listing_pictures.first(1) %>
+            <%= image_tag picture.picture.url(:large) %> 
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+//Search listing view by id
+
+var thumb = document.querySelector(".image-thumb");
+
+
+thumb.addEventListener("click", pictureSwitch);
+
+function pictureSwitch (e) {
+
+  var large = document.querySelector(".image-large");
+  large.innerHTML = ""
+  var img = e.target.getAttribute("src");
+  var newPath = img.replace("/thumb/", "/large/");
+  //Set Large image
+  var large = document.querySelector(".image-large");
+  var newImg = document.createElement("img");
+
+  large.appendChild(newImg);
+
+  newImg.setAttribute("src", newPath)
+
+}
+</script>

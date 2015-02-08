@@ -1,0 +1,48 @@
+<div class="container new-listing">
+  <%= form_for @listing do |f|%>
+    <p>
+      <%= f.label :title, "Title" %>
+    </p>
+    <p>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :body, "Description" %>
+    </p>
+    <p>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.label :zip, "Zip" %>
+    </p>
+    <p>
+      <%= f.text_field :zip %>
+    </p>
+    <p class="last">
+      <h3>Photos</h3>
+      <div class="images">
+        <%= f.fields_for :listing_pictures do |photo_form| %>
+          <% photo_form.file_field :picture, class: "img", hidden: "" %>
+        <% end %>
+      </div>
+      <div class="add-image">
+        <p>+</p>
+      </div>
+    </p>
+    <div class="new-listing-button">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  var upload = document.querySelector(".add-image");
+  upload.addEventListener("click", newImage);
+
+  function newImage() {
+    // debugger
+    var hiddenUpload = document.querySelector('[hidden]');
+    hiddenUpload.removeAttribute("hidden");
+    hiddenUpload.focus();
+  }
+</script>
