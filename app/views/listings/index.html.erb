@@ -10,7 +10,7 @@
         </p>
         <div class="image-thumb">
           <% for picture in listing.listing_pictures %>
-            <%= image_tag picture.picture.url(:thumb) %>
+            <%= image_tag picture.picture.url(:thumb), :onclick => "imageSwitch(this)" %>
           <% end %>
         </div>
         <div class="image-large">
@@ -22,23 +22,3 @@
   </div>
   <% end -%>
 </div>
-
-<script type="text/javascript">
-
-var container = document.querySelector(".container");
-container.addEventListener("click", sayHi);
-
-function sayHi (e) {
-  var target = e.target
-  var large = target.parentNode.parentNode.querySelector('.image-large');
-
-  large.innerHTML = ""
-  var img = target.getAttribute("src");
-  var newPath = img.replace("/thumb/", "/large/");
-  //Set Large image
-  var newImg = document.createElement("img");
-  large.appendChild(newImg);
-  newImg.setAttribute("src", newPath)
-
-}
-</script>
