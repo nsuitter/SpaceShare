@@ -31,7 +31,7 @@ function search() {
     var a = document.createElement("a");
 
     a.textContent = title;
-    a.setAttribute("href", "/searches/?id=" + id)
+    a.setAttribute("href", "/listings/" + id)
 
     div3.textContent = body;
 
