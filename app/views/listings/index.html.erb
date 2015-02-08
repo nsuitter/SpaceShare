@@ -1,8 +1,7 @@
 <div class="container">
-  
+  <% @listings.each do |listing| %>  
   <div class="listing-match">
       <div class="match-title">
-      <% @listings.each do |listing| %>
         <%= listing.title %>
       </div>
       <div class="match-body">
@@ -20,31 +19,25 @@
           <% end %>
         </div>
       </div>
-    <% end -%>
   </div>
+  <% end -%>
 </div>
 
 <script type="text/javascript">
-//Search listing view by id
 
-var thumb = document.querySelector(".image-thumb");
-
-
-thumb.addEventListener("click", sayHi);
+var container = document.querySelector(".container");
+container.addEventListener("click", sayHi);
 
 function sayHi (e) {
+  var target = e.target
+  var large = target.parentNode.parentNode.querySelector('.image-large');
 
-  var large = document.querySelector(".image-large");
   large.innerHTML = ""
-  var img = e.target.getAttribute("src");
+  var img = target.getAttribute("src");
   var newPath = img.replace("/thumb/", "/large/");
- debugger
   //Set Large image
-  var large = document.querySelector(".image-large");
   var newImg = document.createElement("img");
-
   large.appendChild(newImg);
-
   newImg.setAttribute("src", newPath)
 
 }
