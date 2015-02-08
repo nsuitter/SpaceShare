@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  get 'listings/new'
-
-  get 'listings/edit'
-
-  get 'listings/show'
-
-  get 'listings/index'
-
+  resources :zips
   resources :listings
   root 'static_pages#home'
 
