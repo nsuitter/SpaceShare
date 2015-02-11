@@ -32,46 +32,14 @@ h2 {
 	font-size: 2em;
 }
 
-ul.nav {
-	display: inline;
-}
-
-.nav li {
-	list-style: none;
-	display: inline;
-	margin-right: 2em;
-}
-
 a {
 	text-decoration: none;
 	color: #777777;
 }
 
-.outer-nav{
-	height: 32px;
-	position: fixed;
-	z-index: 99;
-}
-
 .navbar {
 	margin: .5em;
-	border: 1px solid #e7e7e7;
-	border-radius: .2em;
-	right: 0;
-	left: 0;
-	position: fixed;
-	background-color: #f8f8f8;
-	height: 2em;
-	vertical-align: middle;
-	line-height: 2em;
-	z-index: 100;
 }
-
-.brand {
-	padding-left: 2em;
-	font-size: 1.2em;
-}
-
 
 /*******************************************
 Listing-Index-Specific Body
@@ -93,7 +61,6 @@ Listing-Index-Specific Body
 
 .search-section {
 	height: 500px;
-	top: 3em;
 	position: relative;
 }
 
@@ -144,6 +111,11 @@ Listing-Index-Specific Body
 /*******************************************
 Listing-Matches Results
 ********************************************/
+
+.container.match {
+	padding-top: 0;
+	margin-top: 1em;
+}
 
 .listing-match {
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.35);

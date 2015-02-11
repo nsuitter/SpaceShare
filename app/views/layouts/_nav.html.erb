@@ -1,11 +1,28 @@
-<div class="outer-nav">
-  <div class="navbar">
-    <div class="navbar-inner">
-      <a ><%= link_to 'SpaceShare', root_path, :class => 'brand' %></a>
-      <ul class="nav">
-        <li class=""><%= link_to 'Browse listings', listings_path %></li>
-        <li class=""><%= link_to 'List your space!', new_listing_path %></li>
-      </ul>
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only"><%= link_to 'Browse listings', listings_path %></span>
+        <span class="icon-bar"><%= link_to 'List your space!', new_listing_path %></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to 'SpaceShare', root_path, :class => 'navbar-brand' %></a>
     </div>
-  </div>
-</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to(raw('Browse listings <span class="sr-only">(current)</span>'), listings_path) %></li>
+        <li><%= link_to(raw('List your space! <span class="sr-only">(current)</span>'), new_listing_path) %></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'About SpaceShare', about_path %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
