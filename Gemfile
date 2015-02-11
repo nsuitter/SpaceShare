@@ -5,6 +5,7 @@ gem 'rails', '4.2.0'
 gem 'sqlite3' #maybe 'pg'
 
 gem "paperclip", "~> 4.2"
+gem 'devise'
 
 
 #Front End Management
