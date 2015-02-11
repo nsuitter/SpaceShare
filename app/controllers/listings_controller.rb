@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
 
   def new
+    authenticate_user!
     @listing = Listing.new 
       10.times{ @listing.listing_pictures.build }
   end
