@@ -1,2 +1,18 @@
-<h1>Listings#edit</h1>
-<p>Find me in app/views/listings/edit.html.erb</p>
+<div class="container">
+  <%= simple_form_for(@listing, html: {:class => 'form-horizontal'} ) do |f|%>
+    <%= f.input :title, html: {:class => 'form-control'} %>
+    <%= f.input :body, html: {:class => 'form-control'} %>
+    <%= f.input :zip, html: {:class => 'form-control'} %>
+    <div class="form-actions">
+      <%= f.button :submit, "Create new listing" %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+
+  var zip = document.querySelector('#edit_listing_11 > div.form-group.integer.required.listing_zip.has-error > label')
+  if (zip.nextSibling.nextSibling.tagName == 'SPAN') {
+    zip.nextSibling.nextSibling.innerText = "can't be blank and must be a number"
+  }
+</script>

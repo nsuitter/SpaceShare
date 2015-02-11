@@ -3,7 +3,7 @@ Rails.application.routes.draw do
                                       :sign_in => "login", 
                                       :sign_out => "logout",
                                       :settings => "settings" }
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :edit, :destroy]
   resources :zips
   resources :listings
   get 'about', to: 'static_pages#about'

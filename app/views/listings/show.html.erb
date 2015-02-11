@@ -19,5 +19,7 @@
           <% end %>
         </div>
       </div>
+      <div class="bottom-left"><%= link_to 'Edit', edit_listing_path %></div>
+      <div class="bottom-right"><%= link_to 'Delete', listing_path, method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-xs warning' %></div>
   </div>
 </div>

@@ -21,6 +21,23 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    @listing = get_listing
+  end
+
+  def destroy
+    @listing = get_listing
+    @listing.destroy
+    redirect_to listings_path
+  end
+
+  def update
+    @listing = get_listing
+   
+    if @listing.update(listing_params)
+      redirect_to @listing
+    else
+      render 'edit'
+    end
   end
 
   def show

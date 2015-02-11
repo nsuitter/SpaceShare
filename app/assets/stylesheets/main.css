@@ -107,6 +107,15 @@ Listing-Index-Specific Body
 	float: right;
 }
 
+div.bottom-right,
+div.bottom-left {
+	display: inline-block;
+	margin: 3px;
+}
+
+div.bottom-right {
+	float: right;
+}
 
 /*******************************************
 Listing-Matches Results
