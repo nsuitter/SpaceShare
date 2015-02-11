@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :zips
   resources :listings
   get 'about', to: 'static_pages#about'
