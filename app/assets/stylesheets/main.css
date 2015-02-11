@@ -216,3 +216,19 @@ Search-Match-Page Body
 	height: 500px;
 	border-radius: 5px;
 }
+
+/*******************************************
+Devise error messages
+********************************************/
+
+.alert {
+	color: crimson;
+	margin-left: 2em;
+	padding: 0;
+}
+
+.notice {
+	color: forestgreen;
+	margin-left: 2em;
+	padding: 0;
+}

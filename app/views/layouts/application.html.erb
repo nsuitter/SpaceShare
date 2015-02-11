@@ -9,10 +9,23 @@
 <body>
 
 <%= render 'layouts/nav' %>
-<%= yield %>
-
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<%= yield %>
+
+
 
 </body>
+<script type="text/javascript">
+  notice = document.querySelector('p.notice')
+  alert = document.querySelector("p.alert")
+
+  if (notice.innerHTML == '') {
+    notice.setAttribute("hidden", true)
+  }
+
+  if (alert.innerHTML == '') {
+    alert.setAttribute("hidden", true)
+  }
+</script>
 </html>
