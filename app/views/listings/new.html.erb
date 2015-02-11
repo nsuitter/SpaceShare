@@ -7,7 +7,7 @@
       <h3>Photos</h3>
       <div class="images">
         <%= f.simple_fields_for :listing_pictures do |photo_form| %>
-          <p hidden>
+          <p class="hidden-upload" hidden>
             <%= photo_form.file_field :picture, :as => :hidden, :class => "img" %>
           </p>
         <% end %>
@@ -28,8 +28,13 @@
 
   function newImage() {
     // debugger
-    var hiddenUpload = document.querySelector('[hidden]');
+    var hiddenUpload = document.querySelector('p.hidden-upload[hidden]');
     hiddenUpload.removeAttribute("hidden");
     hiddenUpload.focus();
+  }
+
+  var zip = document.querySelector('#new_listing > div.listing_zip.has-error > label')
+  if (zip.nextSibling.nextSibling.tagName == 'SPAN') {
+    zip.nextSibling.nextSibling.innerText = "can't be blank and must be a number"
   }
 </script>

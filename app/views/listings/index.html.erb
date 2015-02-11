@@ -2,7 +2,7 @@
   <% @listings.each do |listing| %>  
   <div class="listing-match">
       <div class="match-title">
-        <%= listing.title %>
+        <%= link_to listing.title, listing_path(listing) %>
       </div>
       <div class="match-body">
         <p>

@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
 
     if @listing.valid? and @listing.save
-      redirect_to listings_path
+      redirect_to listing_path(@listing)
     else 
       render :action => :new
     end

@@ -21,6 +21,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'About SpaceShare', about_path %></li>
+        <li><%= user_signed_in? == true ? link_to('Log out', logout_path) : link_to('Sign in',login_path) %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
